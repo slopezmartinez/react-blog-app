@@ -1,0 +1,9 @@
+.post-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 680px;
+  width: 100%;
+  margin: 2rem auto;
+}

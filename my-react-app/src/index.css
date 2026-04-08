@@ -1,0 +1,123 @@
+:root {
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+
+#header {
+  background: linear-gradient(to right, #3b3bca, #6b3fa0);
+  padding: 20px;
+  color: white; 
+}
+
+#header nav{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 10px;
+}
+
+#header nav a{
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+body {
+  font-family: var(--sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+
+}
+
+textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  resize: vertical;
+  vertical-align: top;
+}
+.post-card{
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 680px;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.posts-list{
+  flex: 1;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  margin: 0;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body.light{
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+body.dark{
+  background-color: #1a1a2a;
+  color: #f0f0f0;
+}
+
+body.dark #header{
+  background: linear-gradient(to right, #1a1a2a, #3b3bca);
+}
+
+body.dark .post-card{
+  background: #2e2e3e;
+  color: #f0f0f0;
+}
+
+body.dark footer{
+  background-color: #090953;
+}
+footer{
+  margin-top: auto;
+  text-align: center;
+  background-color: #331b65;
+  padding: 20px;
+  color: white;
+}
+
+footer p::before {
+  content: "\00A9 "; 
+  font-weight: bold; 
+  color: white;
+}
+
+button {
+  background-color: #040a51;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+} 
+
