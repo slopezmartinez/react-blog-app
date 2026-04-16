@@ -4,7 +4,7 @@ import posts from './posts'
 import CommentForm from './CommentForm'
 import{useState, useEffect} from 'react'
 
-function IndivdualPostPage(){
+function IndividualPostPage(){
     const {id} = useParams()
     const [post, setPost] = useState(null)
     const [user, setUser] = useState(null)
@@ -19,12 +19,12 @@ function IndivdualPostPage(){
       })
       .then(response => response.json())
       .then(userData => setUser(userData))
-      .catch(error => console.error('Error fetching post:' . error))
+      .catch(error => console.error('Error fetching post:' , error))
 
       fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
       .then(response => response.json())
       .then(data => setComments(data))
-      .catch(error => console.error('Error fetching comments:' . error))
+      .catch(error => console.error('Error fetching comments:' , error))
     }, [id])
 
     if(!comments) return <p>No Comments yet. Be the first to comment!</p>
@@ -46,4 +46,4 @@ function IndivdualPostPage(){
     )
 }
 
-export default IndivdualPostPage
+export default IndividualPostPage
