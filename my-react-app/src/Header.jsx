@@ -16,7 +16,7 @@ function Header(){
                 <Link key={post.id} to={`/post/${post.id}`}>{post.title}</Link>  
                 ))}//took off the for the posts in navbar */}
                <Link to="/contact">Contact</Link>
-               {/* <Link to="/login">Login</Link> */}
+               { <Link to="/login">Login</Link> }
                {/* added link login */}
                <button onClick={toggleTheme}>
                 Switch to {theme === 'light' ? 'dark' : 'light'} theme
