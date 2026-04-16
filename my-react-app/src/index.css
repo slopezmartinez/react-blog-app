@@ -111,8 +111,7 @@ footer p::before {
   font-weight: bold; 
   color: white;
 }
-
-button {
+.theme-btn {
   background-color: #040a51;
   color: white;
   border: none;
@@ -121,3 +120,12 @@ button {
   font-size: 16px;
 } 
 
+.logout-btn {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
