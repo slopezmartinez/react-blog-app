@@ -7,7 +7,7 @@ function Header(){
     const {theme, toggleTheme} = useTheme()
     return(
         <div id = "header">
-            <h2>My Blog</h2>
+            <h2>Green Things</h2>
             <nav>
                <Link to="/">Blog Posts List</Link>
                {posts.map((post) => (

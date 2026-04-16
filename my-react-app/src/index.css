@@ -6,7 +6,7 @@
 
 
 #header {
-  background: linear-gradient(to right, #3b3bca, #6b3fa0);
+  background: linear-gradient(to right, #42ae49, #09481a);
   padding: 20px;
   color: white; 
 }
@@ -82,12 +82,12 @@ body.light{
 }
 
 body.dark{
-  background-color: #1a1a2a;
+  background-color: #054806;
   color: #f0f0f0;
 }
 
 body.dark #header{
-  background: linear-gradient(to right, #1a1a2a, #3b3bca);
+  background: linear-gradient(to right, #022204, #0e7927);
 }
 
 body.dark .post-card{
@@ -96,12 +96,12 @@ body.dark .post-card{
 }
 
 body.dark footer{
-  background-color: #090953;
+  background-color: #0d3104;
 }
 footer{
   margin-top: auto;
   text-align: center;
-  background-color: #331b65;
+  background-color: #1c6b0b;
   padding: 20px;
   color: white;
 }
@@ -113,7 +113,7 @@ footer p::before {
 }
 
 button {
-  background-color: #040a51;
+  background-color: #067a17;
   color: white;
   border: none;
   padding: 10px 20px;
