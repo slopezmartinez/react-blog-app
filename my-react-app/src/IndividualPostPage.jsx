@@ -26,8 +26,8 @@ function IndividualPostPage(){
       .then(data => setComments(data))
       .catch(error => console.error('Error fetching comments:' , error))
     }, [id])
-
     if(!comments) return <p>No Comments yet. Be the first to comment!</p>
+
     if(!post) return <p>Loading...</p>
 
     return(
@@ -41,7 +41,9 @@ function IndividualPostPage(){
                 </div>
             )}
             <Link to ="/">Back to all posts</Link>
-            <CommentForm/>
+            {/*if(login) && CommentForm
+            else <p>Login to comment</p> */ }
+            {<CommentForm/>}
         </div>
     )
 }
