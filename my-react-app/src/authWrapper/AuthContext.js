@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-
+/* this is the login useContext to check if a user is actually logged in */
 const AuthContext = createContext();
 
 export const useUsername = () => {
