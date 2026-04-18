@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useAuth } from './authWrapper/AuthContext';
-
+import { useNavigate } from 'react-router';
 
 function Login() {
     const { login } = useAuth();
-
+    const navigate = useNavigate();
     const [userData, setUserData] = useState({
            username: '', 
            password: '',
@@ -13,7 +13,7 @@ function Login() {
         const onSubmit =(e) =>{
             e.preventDefault();
             login(userData.username);
-            // console.log(userData)
+            navigate('/');
         }
     return(
         <div>
@@ -31,7 +31,7 @@ function Login() {
                 value={userData.password} 
                 onChange={(e) => setUserData({...userData, password: e.target.value})} 
                 />
-                <button type="submit">Login</button>
+                <button type="submit" >Login</button>
             </form>
         </div>
     );

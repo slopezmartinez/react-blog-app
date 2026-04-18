@@ -2,13 +2,15 @@ import {useParams} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import posts from './posts'
 import CommentForm from './CommentForm'
-import{useState, useEffect} from 'react'
+import{useState, useEffect, useContext } from 'react'
+import { useUsername, useAuth } from './authWrapper/AuthContext';
 
 function IndividualPostPage(){
     const {id} = useParams()
     const [post, setPost] = useState(null)
     const [user, setUser] = useState(null)
     const [comments, setComments] = useState([])
+    const username = useUsername();
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
@@ -41,9 +43,7 @@ function IndividualPostPage(){
                 </div>
             )}
             <Link to ="/">Back to all posts</Link>
-            {/*if(login) && CommentForm
-            else <p>Login to comment</p> */ }
-            {<CommentForm/>}
+            {username ? <CommentForm /> : <p>Login to comment</p>}
         </div>
     )
 }
