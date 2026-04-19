@@ -18,6 +18,7 @@ function BlogPostsPage() {
                 {posts.map((post) => (
                     <div className="post-card" key={post.id}>
                         <h2>{post.title}</h2>
+                        <p>{post.body}</p>
                         <p>{post.author}</p>
                         <p>{post.date}</p>
                         <Link to={`/post/${post.id}`}>Read More</Link>

@@ -16,7 +16,8 @@ function Login() {
             navigate('/');
         }
     return(
-        <div>
+        <div className="post-card">
+            <h2>Login</h2>
             <form onSubmit={onSubmit}>
                 <input
                 id="username"

@@ -11,7 +11,8 @@ function Header(){
     const {theme, toggleTheme} = useTheme()
     return(
         <div id = "header">
-            <h2>My Blog</h2>
+            {/* <h2>My Blog</h2> */}
+            <h2>My Green Thumb</h2>
             <nav>
                <Link to="/">Home</Link>
 
