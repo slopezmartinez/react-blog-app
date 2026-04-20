@@ -14,7 +14,15 @@ function BlogPostsPage() {
 
     return (
         <div className ="app">
-            <div className="posts-list">
+            <div className="post-card"> 
+                <h1>Welcome!</h1>
+                <h4>Hi! Everyone this is our Gardening Blog Page! This is where
+                    we share our latest tips and tricks for growing a beautiful garden. 
+                    We give updates on some of our latest projects. We show our progress with our newer plants and growth processes. 
+                    Thank you for following our journey!</h4>
+                <p><a href ="#post-list" >Explore Blog Posts!</a></p>    
+            </div>
+            <div id="post-list" className="posts-list">
                 {posts.map((post) => (
                     <div className="post-card" key={post.id}>
                         <h2>{post.title}</h2>

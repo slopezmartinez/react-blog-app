@@ -19,10 +19,10 @@
   gap: 2rem;
   margin-top: 10px;
 }
-#header nav a:hover{
+#header nav :hover{
   text-decoration: underline;
   font-size: 1rem;
-  color:rgba(27, 130, 89, 0.8);
+  color:rgba(128, 236, 229, 0.8);
 }
 
 #header nav a{
@@ -107,8 +107,8 @@ html, body{
 }
 
 button{
-  margin-top:10px;
-  margin-bottom: 20px;
+  /* margin-top:10px;
+  margin-bottom: 20px; */
   padding:10px 20px;
   background-color:rgb(30, 154, 105);
   color:white;
@@ -118,6 +118,10 @@ button{
 }
 button:hover{
   background-color:rgba(3, 53, 33, 0.8);
+}
+form button{
+  margin-top:10px;
+  margin-bottom: 20px;
 }
 
 /* body.light{
@@ -162,7 +166,7 @@ footer p::before {
   font-weight: bold; 
   color: white;
 }
-.theme-btn {
+.theme-btn, .logout-btn {
   /* background-color: #040a51; */
   background-color: #2d8a62;
 
@@ -171,17 +175,16 @@ footer p::before {
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 16px;
+  align-items:center;
+  /* margin-bottom: 5px; */
 } 
-
-.logout-btn {
-  background: none;
-  color: white;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 10px;
+ .theme-btn:hover, .logout-btn:hover {
+  /* background-color: #090953; */
+  background-color: #074824;
+  text-decoration: none;
 }
+
 .post-card a{
   display: inline-block;
   margin-top: 10px;
