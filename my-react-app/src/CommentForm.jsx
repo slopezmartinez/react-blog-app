@@ -34,6 +34,7 @@ function CommentForm(){
         <div>
             <h2>Comments</h2>
             <div>
+                {/* sarah change this by using the authContext username to setName */}
                 <label>Name</label>
                 <input
                     type="text"

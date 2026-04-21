@@ -2,13 +2,15 @@ import {useParams} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import posts from './posts'
 import CommentForm from './CommentForm'
-import{useState, useEffect} from 'react'
+import{useState, useEffect, useContext } from 'react'
+import { useUsername, useAuth } from './authWrapper/AuthContext';
 
-function IndivdualPostPage(){
+function IndividualPostPage(){
     const {id} = useParams()
     const [post, setPost] = useState(null)
     const [user, setUser] = useState(null)
     const [comments, setComments] = useState([])
+    const username = useUsername();
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
@@ -19,15 +21,15 @@ function IndivdualPostPage(){
       })
       .then(response => response.json())
       .then(userData => setUser(userData))
-      .catch(error => console.error('Error fetching post:' . error))
+      .catch(error => console.error('Error fetching post:' , error))
 
       fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
       .then(response => response.json())
       .then(data => setComments(data))
-      .catch(error => console.error('Error fetching comments:' . error))
+      .catch(error => console.error('Error fetching comments:' , error))
     }, [id])
-
     if(!comments) return <p>No Comments yet. Be the first to comment!</p>
+
     if(!post) return <p>Loading...</p>
 
     return(
@@ -41,9 +43,9 @@ function IndivdualPostPage(){
                 </div>
             )}
             <Link to ="/">Back to all posts</Link>
-            <CommentForm/>
+            {username ? <CommentForm /> : <p>Login to comment</p>}
         </div>
     )
 }
 
-export default IndivdualPostPage
+export default IndividualPostPage

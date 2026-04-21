@@ -6,7 +6,8 @@
 
 
 #header {
-  background: linear-gradient(to right, #42ae49, #09481a);
+  /* background: linear-gradient(to right, #3b3bca, #6b3fa0); */
+  background: linear-gradient(to right, #3bca96, #3f9ea0);
   padding: 20px;
   color: white; 
 }
@@ -14,14 +15,25 @@
 #header nav{
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   margin-top: 10px;
+}
+#header nav :hover{
+  text-decoration: underline;
+  font-size: 1rem;
+  color:rgba(128, 236, 229, 0.8);
 }
 
 #header nav a{
   color: white;
   text-decoration: none;
-  font-size: 0.95rem;
+  
+} 
+#header nav p:hover{
+  color: white;
+  text-decoration: none;
+  /* font-size: 0.95rem; */
 }
 
 body {
@@ -29,18 +41,41 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
+  background-image: url("assets/background.png");
+
 
 }
 
 textarea{
-  width: 100%;
+  /* width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 0.95rem;
   resize: vertical;
-  vertical-align: top;
+  vertical-align: top; */
+  padding: 1rem;
+  width:100%;
+  height:150px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+  resize:none;
+}
+input{
+  padding: 1rem;
+  width:100%;
+  height:50px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+  resize:none;
+}
+#username, #password{
+  margin-top: 1rem;
 }
 .post-card{
   background: white;
@@ -76,33 +111,58 @@ html, body{
   box-sizing: border-box;
 }
 
-body.light{
+button{
+  /* margin-top:10px;
+  margin-bottom: 20px; */
+  padding:10px 20px;
+  background-color:rgb(30, 154, 105);
+  color:white;
+  border:none;
+  border-radius:16px;
+  cursor:pointer;
+}
+button:hover{
+  background-color:rgba(3, 53, 33, 0.8);
+}
+form button{
+  margin-top:10px;
+  margin-bottom: 20px;
+}
+
+/* body.light{
   background-color: #f0f0f0;
   color: #000000;
-}
+} */
 
-body.dark{
-  background-color: #054806;
+/* body.dark{
+  background-color: #1a1a2a;
   color: #f0f0f0;
-}
+} */
 
 body.dark #header{
-  background: linear-gradient(to right, #022204, #0e7927);
+  /* background: linear-gradient(to right, #1a1a2a, #3b3bca); */
+  background: linear-gradient(to right, #193323, #1e5f40);
+
 }
 
 body.dark .post-card{
-  background: #2e2e3e;
+  /* background: #2e2e3e; */
+  background: #285d43;
   color: #f0f0f0;
 }
 
 body.dark footer{
-  background-color: #0d3104;
+  /* background-color: #090953; */
+  background-color: #074824;
+
 }
+
 footer{
   margin-top: auto;
   text-align: center;
-  background-color: #1c6b0b;
-  padding: 20px;
+  /* background-color: #331b65; */
+  background-color: #0d8b5f;
+  padding: 10px;
   color: white;
 }
 
@@ -111,13 +171,34 @@ footer p::before {
   font-weight: bold; 
   color: white;
 }
+.theme-btn, .logout-btn {
+  /* background-color: #040a51; */
+  background-color: #2d8a62;
 
-button {
-  background-color: #067a17;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 16px;
+  align-items:center;
+  /* margin-bottom: 5px; */
 } 
+ .theme-btn:hover, .logout-btn:hover {
+  /* background-color: #090953; */
+  background-color: #074824;
+  text-decoration: none;
+}
 
+.post-card a{
+  display: inline-block;
+  margin-top: 10px;
+  color: white;
+  background-color:rgb(30, 154, 105);
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.post-card a:hover{
+  background-color:rgba(3, 53, 33, 0.8);
+}
