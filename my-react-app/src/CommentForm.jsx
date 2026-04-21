@@ -1,11 +1,10 @@
 import {useState} from 'react'
-import {useAuth} from './AuthContext'
-
+import { useAuth } from "./authWrapper/AuthContext"
 
 function CommentForm(){
     const [comments, setComments] = useState([])
-    const [name, setName] = useState(user?.name || '')
     const {user} = useAuth()
+    const [name, setName] = useState(user?.name || '')
     const [comment, setComment] = useState('')
 
     const handleSubmit = () => {
