@@ -26,7 +26,7 @@ function Header(){
                 Switch to {theme === 'light' ? 'dark' : 'light'} theme
                </button>
                {/* added link login */}
-               {username ? <p> Hi {username}! <button className="logout-btn" onClick={logout}>Logout</button></p>: <Link to="/login">Login</Link>}
+               {username ? <p> Hi {username}! <button className="logout-btn" onClick={logout}>Logout</button></p>: <Link className="theme-btn" to="/login">Login!</Link>}
 
                
             </nav>
