@@ -1,48 +1,36 @@
-import {useState} from 'react'
+import { useState } from 'react'
+import { useUsername, useAuth } from './authWrapper/AuthContext';
 
-
-function CommentForm(){
+function CommentForm() {
     const [comments, setComments] = useState([])
-    const [name, setName] = useState('')
+    const username = useUsername();
+    const [name, setName] = useState(username || '')
     const [comment, setComment] = useState('')
 
     const handleSubmit = () => {
-        if (name && comment){
+        if (comment) {
             fetch('https://jsonplaceholder.typicode.com/comments', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    name: name, 
+                    name: username,  
                     body: comment,
-                    email: 'user@example.com'
-        })
-    })
+                })
+            })
             .then(response => response.json())
             .then(newComment => {
                 setComments([...comments, newComment])
-                setName('')
                 setComment('')
             })
             .catch(error => console.error('Error posting comment:', error))
         }
     }
-    return(
+
+    return (
         <div>
             <h2>Comments</h2>
             <div>
-                {/* sarah change this by using the authContext username to setName */}
-                <label>Name</label>
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </div>
-            <div>
-                <label>Comments</label>
+                <label>Comment</label>
                 <textarea
                     placeholder="Your Comment"
                     rows={4}
@@ -58,7 +46,7 @@ function CommentForm(){
                     comments.map((c, index) => (
                         <div key={index}>
                             <p><strong>{c.name}</strong></p>
-                            <p>{c.body || c.comment}</p>
+                            <p>{c.body}</p>
                         </div>
                     ))
                 )}
@@ -66,5 +54,4 @@ function CommentForm(){
         </div>
     )
 }
-
 export default CommentForm
